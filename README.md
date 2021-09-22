@@ -47,11 +47,11 @@ Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README
 
 - [Project Title](#project-title)
 - [Table of contents](#table-of-contents)
-- [Demo-Preview](#Technologies-&-Software)
+- [Technologies & Software](#Technologies-&-Software)
 - [Development](#development)
 - [Footer](#footer)
 - 
-# Technologies & Software
+# Technologies-&-Software
 
 <!-- Add a demo for your project -->
 I used HTML/CSS & Javascript.
