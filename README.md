@@ -1,4 +1,4 @@
-# Udacity_Landing_Page_Project
+# Udacity Landing Page Project
 <!-- Add banner here -->
 
 <!-- Describe your project in brief -->
@@ -10,7 +10,7 @@ while highlighting the active section in the menu at the same time, all using Ja
 
 # Table of contents
 
-- [Project Title](#udacity_landing_page_project)
+- [Project Title](#udacity-landing-page-project)
 - [Table of contents](#table-of-contents)
 - [Technologies & Software](#technologies-and-software)
 - [Documentation](#documentation)
@@ -26,7 +26,7 @@ for code editing I use Visual Studio Code.
 # Documentation
 
 I depended mainly on W3schools & MDN web docs
-I didn't know how to make a dropdown list so I studied an approach on W3schools and implemented it
+I didn't know how to make a dropdown list so I studied an approach on W3schools and implemented it for small screen displays.
 
 # Usage
 
