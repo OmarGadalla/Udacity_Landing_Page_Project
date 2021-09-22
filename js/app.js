@@ -17,9 +17,9 @@
  * Define Global Variables
  * 
 */
-const pageSections = document.querySelectorAll('section');
-const navBar = document.getElementById('navbar__list');
-const screenWidth = window.matchMedia("(max-width: 400px)");
+const pageSections = document.querySelectorAll('section'); // capturing all sections
+const navBar = document.getElementById('navbar__list'); // capturing the nav ul
+const screenWidth = window.matchMedia("(max-width: 400px)"); // will use it to adjust the nav menu for small screens
 
 /**
  * End Global Variables
@@ -44,24 +44,38 @@ function createListItem(section)
 {
     let listElement = document.createElement('li');
     listElement.setAttribute("class", "menu__link");
+
+    /*--- creating a common attribute (data-nav) between sections and nav menu ---*/
     listElement.dataset.nav = section.dataset.nav;
-    let sectionHeading = section.querySelector('h2').textContent;
+
+    /*--- setting the text of the nav tab to the heading of the corresponding section ---*/
+    let sectionHeading = section.querySelector('h2').textContent; 
     listElement.textContent = sectionHeading;
+
     return listElement;
 }
 
+/*--------------- A Function to create a drop down list for small screen displays ---------------*/
 function createDropDown()
 {
+    /*--- main div container ---*/
     let dropDown = document.createElement('div');
     dropDown.setAttribute('class', 'dropdown');
+
+    /*--- drop down button ---*/
     let dropDownButton = document.createElement('button');
     dropDownButton.setAttribute('class', 'dropdown__button');
     dropDownButton.textContent = 'Sections';
     dropDown.appendChild(dropDownButton);
+
+    /*--- content div ---*/
     let dropDownContent = document.createElement('div');
     dropDownContent.setAttribute('class', 'dropdown__content');
     dropDown.appendChild(dropDownContent);
+
     document.querySelector('header').appendChild(dropDown);
+
+    /*--- returning dropDownContent (not dropDown) to be used to append lists to further on ---*/
     return dropDownContent;
   
 }
@@ -79,19 +93,20 @@ function getActiveSection()
     let activeTab = '';
     for (let section of pageSections)
     {
-        
+        /*--- monitoring the start and end of each section ---*/
         let sectionTop = section.offsetTop;
         let sectionBottom = section.offsetHeight + sectionTop;
         if((scrollY+200) > sectionTop && sectionBottom > (scrollY+200))
         {
             section.setAttribute('class', 'your-active-class');
-            activeSection = section.getAttribute('data-nav');
-            activeTab = this.document.querySelector(`[data-nav = "${activeSection}"]`);
+            activeSection = section.getAttribute('data-nav'); // capturing the data-nav attribute of the active section
+            activeTab = this.document.querySelector(`[data-nav = "${activeSection}"]`); // capturing the tab that has the same data-nav value
             activeTab.setAttribute("style", "background-color: #333; color: white;");
-            document.querySelector('button').textContent = activeSection + "▼";
+            document.querySelector('button').textContent = activeSection + "▼"; // this line is for small screens
         }
         else
         {
+            /*--- I had to repeat these steps(first 3 lines) because otherwise it gave an error on the last line ---*/
             section.setAttribute('class', 'your-active-class');
             activeSection = section.getAttribute('data-nav');
             section.removeAttribute('class');
@@ -111,8 +126,9 @@ function getActiveSection()
 // Build menu 
 
 
-    if (screenWidth.matches)
+    if (screenWidth.matches) 
     {
+        /*--- small screens ---*/
         let dropDownMain = createDropDown();
         for (let section of pageSections)
         {
@@ -120,8 +136,10 @@ function getActiveSection()
         }
         
     }
-    else
-    {   for (let section of pageSections)
+    else 
+    {   
+        /*--- big screens ---*/
+        for (let section of pageSections)
         {
             navBar.appendChild(createListItem(section));
         }
@@ -129,7 +147,7 @@ function getActiveSection()
 
 
 // Scroll to section on link click
-let sectionLinks = document.getElementsByClassName('menu__link');
+const sectionLinks = document.getElementsByClassName('menu__link');
 let sectionNumber = 1;
 
 
