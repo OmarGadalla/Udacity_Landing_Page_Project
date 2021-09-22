@@ -12,11 +12,11 @@ while highlighting the active section in the menu at the same time, all using Ja
 
 - [Project Title](#project-title)
 - [Table of contents](#table-of-contents)
-- [Technologies & Software](#technologies-&-software)
+- [Technologies & Software](#technologies-and-software)
 - [Development](#development)
 - [Footer](#footer)
 - 
-# Technologies & Software
+# Technologies and Software
 
 <!-- Add a demo for your project -->
 I used HTML/CSS & Javascript.
