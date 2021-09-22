@@ -12,7 +12,7 @@ while highlighting the active section in the menu at the same time, all using Ja
 
 - [Project Title](#project-title)
 - [Table of contents](#table-of-contents)
-- [Technologies & Software](#technologies-software)
+- [Technologies & Software](#technologies-&-software)
 - [Development](#development)
 - [Footer](#footer)
 - 
