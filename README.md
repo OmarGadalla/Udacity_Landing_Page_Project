@@ -16,7 +16,7 @@ while highlighting the active section in the menu at the same time, all using Ja
 - [Development](#development)
 - [Footer](#footer)
 - 
-# Technologies-&-Software
+# Technologies & Software
 
 <!-- Add a demo for your project -->
 I used HTML/CSS & Javascript.
