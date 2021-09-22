@@ -17,7 +17,7 @@ while highlighting the active section in the menu at the same time, all using Ja
 - [Usage](#usage)
 - [Development](#development)
 - [Footer](#footer)
-- 
+
 # Technologies and Software
 
 I used HTML/CSS & Javascript.
@@ -25,7 +25,7 @@ for code editing I use Visual Studio Code.
 
 # Documentation
 
-I depended mainly on W3schools & MDN web docs
+I depended mainly on W3schools & MDN web docs.
 I didn't know how to make a dropdown list so I studied an approach on W3schools and implemented it for small screen displays.
 
 # Usage
