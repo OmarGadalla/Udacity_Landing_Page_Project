@@ -39,6 +39,17 @@ I use [**Shields IO**](https://shields.io/) for making badges. It is a simple an
 
 ![Tweet](https://img.shields.io/twitter/url?style=flat-square&logo=twitter&url=https%3A%2F%2Fnavendu.me%2Fnsfw-filter%2Findex.html): This is not essential but it is a cool way to let others know about your project! Clicking this button automatically opens twitter and writes a tweet about your project and link to it. All the user has to do is to click tweet. Isn't that neat? -->
 
+# Table of contents
+
+<!-- After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
+
+Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README. -->
+
+- [Project Title](#project-title)
+- [Table of contents](#table-of-contents)
+- [Demo-Preview](#Technologies-&-Software)
+- [Development](#development)
+- [Footer](#footer)
 # Technologies & Software
 
 <!-- Add a demo for your project -->
@@ -50,17 +61,7 @@ Here is a random GIF as a placeholder.
 
 ![Random GIF](https://media.giphy.com/media/ZVik7pBtu9dNS/giphy.gif) -->
 
-# Table of contents
 
-<!-- After you have introduced your project, it is a good idea to add a **Table of contents** or **TOC** as **cool** people say it. This would make it easier for people to navigate through your README and find exactly what they are looking for.
-
-Here is a sample TOC(*wow! such cool!*) that is actually the TOC for this README. -->
-
-- [Project Title](#project-title)
-- [Table of contents](#table-of-contents)
-- [Demo-Preview](#Technologies & Software)
-- [Development](#development)
-- [Footer](#footer)
 
 
 
