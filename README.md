@@ -10,7 +10,7 @@ while highlighting the active section in the menu at the same time, all using Ja
 
 # Table of contents
 
-- [Project Title](#project-title)
+- [Project Title](#udacity_landing_page_project)
 - [Table of contents](#table-of-contents)
 - [Technologies & Software](#technologies-and-software)
 - [Documentation](#documentation)
@@ -30,7 +30,7 @@ I didn't know how to make a dropdown list so I studied an approach on W3schools 
 
 # Usage
 
-The dropdown menu is responsive, the text content displays the heading of the section in display.
+The dropdown menu is responsive, the text content on the drop down button displays the heading of the section in display.
 Also when the dropdown list is visible, the section in view is highlighted.
 the only down side of this dropdown menu is it's size, it doesn't really stand out.
 
