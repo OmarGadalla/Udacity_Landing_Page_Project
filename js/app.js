@@ -102,7 +102,14 @@ function getActiveSection()
             activeSection = section.getAttribute('data-nav'); // capturing the data-nav attribute of the active section
             activeTab = this.document.querySelector(`[data-nav = "${activeSection}"]`); // capturing the tab that has the same data-nav value
             activeTab.setAttribute("style", "background-color: #333; color: white;");
-            document.querySelector('button').textContent = activeSection + "▼"; // this line is for small screens
+            if (screenWidth.matches) 
+            {
+                document.querySelector('button').textContent = activeSection; + "▼"; // this line is for small screens
+            }
+            else
+            {
+                //Do nothing
+            }
         }
         else
         {
@@ -114,6 +121,7 @@ function getActiveSection()
             activeTab.removeAttribute('style');
         }
     }
+    console.log(scrollY);
 }
 // Scroll to anchor ID using scrollTO event
 
