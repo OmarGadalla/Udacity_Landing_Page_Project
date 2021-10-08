@@ -121,7 +121,7 @@ function getActiveSection()
             activeTab.removeAttribute('style');
         }
     }
-    console.log(scrollY);
+    // console.log(scrollY);
 }
 
 /*----------- The function that builds the menu -----------*/
@@ -145,6 +145,69 @@ function buildMenu()
             navBar.appendChild(createListItem(section));
         }
     }
+}
+
+
+/*----------- A function to delete the nav bar to replace it with a dropdown menu -----------*/
+function deleteList()
+{
+    const targetList = document.querySelectorAll('li');
+    for(list of targetList)
+    {
+        list.parentElement.removeChild(list);
+    }
+}
+
+/*----------- A function to delete the dropdown menu to replace it with nav bad -----------*/
+function deleteDiv()
+{
+    const targetDiv = document.getElementsByClassName('dropdown');
+    targetDiv[0].remove(0);
+}
+
+/*----------- The function that re-builds the menu for a resize event listener -----------*/
+function rebuildMenu()
+{
+
+    if (screenWidth.matches) 
+    {
+        deleteList(); // delete nav bar and add dropdown menu
+        /*--- small screens ---*/
+        let dropDownMain = createDropDown();
+        for (let section of pageSections)
+        {
+            dropDownMain.appendChild(createListItem(section));
+        }
+        
+    }
+    else if (document.getElementsByClassName('dropdown').length != 0)
+    {   
+        deleteDiv(); //delete dropdown menu then add nav abr
+        for (let section of pageSections)
+        {
+            navBar.appendChild(createListItem(section));
+        }
+    
+        
+    }
+    else
+    {
+        // Do nothing
+    }
+
+    const sectionLinks = document.getElementsByClassName('menu__link');
+    let sectionNumber = 1;
+
+
+    for (let link of sectionLinks)
+    {   
+        let targetSection = document.getElementById('section'+sectionNumber);
+        link.addEventListener('click', function () {
+            targetSection.scrollIntoView({block: "center", behavior: "smooth"});
+        });
+        sectionNumber++;
+    }
+
 }
 // Scroll to anchor ID using scrollTO event
 
@@ -178,3 +241,4 @@ for (let link of sectionLinks)
 window.addEventListener('scroll', getActiveSection);
 
 //Event listener for when the window is resized
+window.addEventListener('resize', rebuildMenu);
