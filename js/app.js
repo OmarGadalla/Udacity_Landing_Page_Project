@@ -104,7 +104,7 @@ function getActiveSection()
             activeTab.setAttribute("style", "background-color: #333; color: white;");
             if (screenWidth.matches) 
             {
-                document.querySelector('button').textContent = activeSection; + "▼"; // this line is for small screens
+                document.querySelector('button').textContent = activeSection + "▼"; // this line is for small screens
             }
             else
             {
@@ -123,17 +123,10 @@ function getActiveSection()
     }
     console.log(scrollY);
 }
-// Scroll to anchor ID using scrollTO event
 
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-
+/*----------- The function that builds the menu -----------*/
+function buildMenu()
+{
     if (screenWidth.matches) 
     {
         /*--- small screens ---*/
@@ -152,6 +145,19 @@ function getActiveSection()
             navBar.appendChild(createListItem(section));
         }
     }
+}
+// Scroll to anchor ID using scrollTO event
+
+/**
+ * End Main Functions
+ * Begin Events
+ * 
+*/
+
+// Build menu 
+
+
+buildMenu();
 
 
 // Scroll to section on link click
@@ -170,3 +176,5 @@ for (let link of sectionLinks)
 
 // Set sections as active
 window.addEventListener('scroll', getActiveSection);
+
+//Event listener for when the window is resized
