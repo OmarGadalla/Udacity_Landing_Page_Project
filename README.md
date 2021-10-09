@@ -32,6 +32,7 @@ Latest update on the 9th of October 2021:
 
 I've made the page suitable for almost any device/ screen & tested it.
 I've also:
+
 1- refactored some of the code and enclosed the menu building steps in a function called "buildMenu"
 
 2- Added an event listener to change the nav-bar do a dropdown menu without having to refresh the page,
