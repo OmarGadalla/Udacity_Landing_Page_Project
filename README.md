@@ -29,6 +29,7 @@ I depended mainly on W3schools & MDN web docs.
 I didn't know how to make a dropdown list so I studied an approach on W3schools and implemented it for small screen displays.
 
 Latest update on the 9th of October 2021:
+
 I've made the page suitable for almost any device/ screen & tested it.
 I've also:
 1- refactored some of the code and enclosed the menu building steps in a function called "buildMenu"
