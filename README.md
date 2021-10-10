@@ -33,7 +33,7 @@ I didn't know how to make a dropdown list so I studied an approach on W3schools 
 I've made the page suitable for almost any device/ screen & tested it.
 I've also:
 
--1- refactored some of the code and enclosed the menu building steps in a function called "buildMenu"
+1- refactored some of the code and enclosed the menu building steps in a function called "buildMenu"
 
 2- Added an event listener to change the nav-bar do a dropdown menu without having to refresh the page,
 for which I needed two new functions for deleting the existing nav-bar or dropdown div called "deleteList" &
