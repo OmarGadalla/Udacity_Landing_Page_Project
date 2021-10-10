@@ -155,15 +155,29 @@ function scrollToSection(id)
 {
     const sectionLinks = document.getElementById(id).children;
     let sectionNumber = 1;
-
-    for (let link of sectionLinks)
-    {   
-        let targetSection = document.getElementById('section'+sectionNumber);
-        link.addEventListener('click', function () {
-            targetSection.scrollIntoView({block: "center", behavior: "smooth"});
-        });
-        sectionNumber++;
-       
+    if (screenWidth.matches)
+    {
+        for (let link of sectionLinks)
+        {   
+            let targetSection = document.getElementById('section'+sectionNumber);
+            link.addEventListener('click', function () {
+                targetSection.scrollIntoView({block: "start", behavior: "smooth"});
+            });
+            sectionNumber++;
+           
+        }
+    }
+    else
+    {
+        for (let link of sectionLinks)
+        {   
+            let targetSection = document.getElementById('section'+sectionNumber);
+            link.addEventListener('click', function () {
+                targetSection.scrollIntoView({block: "center", behavior: "smooth"});
+            });
+            sectionNumber++;
+           
+        }
     }
 }
 
