@@ -28,7 +28,7 @@ for code editing I use Visual Studio Code.
 I depended mainly on W3schools & MDN web docs.
 I didn't know how to make a dropdown list so I studied an approach on W3schools and implemented it for small screen displays.
 
-Latest update on the 9th of October 2021:
+9th of October 2021 update:
 
 I've made the page suitable for almost any device/ screen & tested it.
 I've also:
@@ -51,6 +51,11 @@ I couldn't fix this problem and though of just sticking with media query and rem
 the display from portrait to landscape as fast as spamming a mouse button so I kept everything in place. Probably it can be fixed by
 making checking for the presence of a dropdown menu earlier in the code to make it faster, I'm still in the process of figuring that out,
 but everything is working fine.
+
+(Latest) 10th of October 2021 update:
+
+- REMOVED the event listener and the functions (rebuildMenu, deleteList & delelteDiv) mentioned in point 2 of the previous update and replaced
+  them with a simple media query that solved the problem in point 5, i.e. made the page responsive via media queries insted of JavaScript.
 
 # Usage
 
