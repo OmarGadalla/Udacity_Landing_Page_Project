@@ -65,12 +65,13 @@ function createDropDown()
     /*--- drop down button ---*/
     let dropDownButton = document.createElement('button');
     dropDownButton.setAttribute('class', 'dropdown__button');
-    dropDownButton.textContent = 'Sections';
+    dropDownButton.textContent = 'Sections' + "▼";
     dropDown.appendChild(dropDownButton);
 
     /*--- content div ---*/
     let dropDownContent = document.createElement('div');
     dropDownContent.setAttribute('class', 'dropdown__content');
+    dropDownContent.setAttribute('id', 'menu_2');
     dropDown.appendChild(dropDownContent);
 
     document.querySelector('header').appendChild(dropDown);
@@ -103,7 +104,7 @@ function getActiveSection()
             activeTab = this.document.querySelector(`[data-nav = "${activeSection}"]`); // capturing the tab that has the same data-nav value
             activeTab.setAttribute("style", "background-color: #333; color: white;");
             if (screenWidth.matches) 
-            {
+            {   
                 document.querySelector('button').textContent = activeSection + "▼"; // this line is for small screens
             }
             else
@@ -148,56 +149,13 @@ function buildMenu()
 }
 
 
-/*----------- A function to delete the nav bar to replace it with a dropdown menu -----------*/
-function deleteList()
+
+
+function scrollToSection(id)
 {
-    const targetList = document.querySelectorAll('li');
-    for(list of targetList)
-    {
-        list.parentElement.removeChild(list);
-    }
-}
-
-/*----------- A function to delete the dropdown menu to replace it with nav bad -----------*/
-function deleteDiv()
-{
-    const targetDiv = document.getElementsByClassName('dropdown');
-    targetDiv[0].remove(0);
-}
-
-/*----------- The function that re-builds the menu for a resize event listener -----------*/
-function rebuildMenu()
-{
-
-    if (screenWidth.matches) 
-    {
-        deleteList(); // delete nav bar and add dropdown menu
-        /*--- small screens ---*/
-        let dropDownMain = createDropDown();
-        for (let section of pageSections)
-        {
-            dropDownMain.appendChild(createListItem(section));
-        }
-        
-    }
-    else if (document.getElementsByClassName('dropdown').length != 0)
-    {   
-        deleteDiv(); //delete dropdown menu then add nav abr
-        for (let section of pageSections)
-        {
-            navBar.appendChild(createListItem(section));
-        }
-    
-        
-    }
-    else
-    {
-        // Do nothing
-    }
-
-    const sectionLinks = document.getElementsByClassName('menu__link');
+    const sectionLinks = document.getElementById(id).children;
     let sectionNumber = 1;
-
+    console.log(sectionLinks);
 
     for (let link of sectionLinks)
     {   
@@ -206,9 +164,30 @@ function rebuildMenu()
             targetSection.scrollIntoView({block: "center", behavior: "smooth"});
         });
         sectionNumber++;
+        console.log(targetSection);
+    }
+}
+
+function buildAllMenu()
+{
+    let dropDownMain = createDropDown();
+    for (let section of pageSections)
+    {
+        dropDownMain.appendChild(createListItem(section));
     }
 
+    scrollToSection('menu_2');
+
+    for (let section of pageSections)
+    {
+        navBar.appendChild(createListItem(section));
+    }
+
+    scrollToSection('navbar__list');
+    
 }
+
+
 // Scroll to anchor ID using scrollTO event
 
 /**
@@ -220,25 +199,25 @@ function rebuildMenu()
 // Build menu 
 
 
-buildMenu();
+buildAllMenu();
 
 
-// Scroll to section on link click
-const sectionLinks = document.getElementsByClassName('menu__link');
-let sectionNumber = 1;
+// Scroll to section on link click (moved inside the buildAllMenu function, left here for reference)
 
-
-for (let link of sectionLinks)
-{   
-    let targetSection = document.getElementById('section'+sectionNumber);
-    link.addEventListener('click', function () {
-        targetSection.scrollIntoView({block: "center", behavior: "smooth"});
-    });
-    sectionNumber++;
-}
+/**
+ *  const sectionLinks = document.getElementsByClassName('menu__link');
+ *  let sectionNumber = 1;
+ *  for (let link of sectionLinks)
+ *  {   
+ *      let targetSection = document.getElementById('section'+sectionNumber);
+ *      link.addEventListener('click', function () {
+ *          targetSection.scrollIntoView({block: "center", behavior: "smooth"});
+ *      });
+ *      sectionNumber++;
+ *      console.log(targetSection);
+ *  }
+ */
 
 // Set sections as active
 window.addEventListener('scroll', getActiveSection);
 
-//Event listener for when the window is resized
-window.addEventListener('resize', rebuildMenu);
