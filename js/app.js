@@ -155,7 +155,6 @@ function scrollToSection(id)
 {
     const sectionLinks = document.getElementById(id).children;
     let sectionNumber = 1;
-    console.log(sectionLinks);
 
     for (let link of sectionLinks)
     {   
@@ -164,7 +163,7 @@ function scrollToSection(id)
             targetSection.scrollIntoView({block: "center", behavior: "smooth"});
         });
         sectionNumber++;
-        console.log(targetSection);
+       
     }
 }
 
