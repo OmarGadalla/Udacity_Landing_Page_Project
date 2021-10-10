@@ -89,7 +89,7 @@ section {
     cursor: pointer; /*--------- Added a pointer curser ---------*/
 }
 
-@media only screen and (max-width: 40em){
+@media only screen and (max-width: 50em){
     .navbar__menu {
         font-size: 0.5em;
         margin: 0.5em 0.5rem 0.5em;
@@ -175,7 +175,7 @@ section {
     z-index: 5;
 }
 
-@media only screen and (max-width: 40em){
+@media only screen and (max-width: 376px){
     .page__header {
         background: transparent;
     }
